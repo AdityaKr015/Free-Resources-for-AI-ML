@@ -25,7 +25,7 @@ There are 2 commonly used free cloud notebook platforms that provide GPUs:
 - Works even when tab is closed 
 - Long sessions (~9 hours)
 
-**Best for: Heavy training, long runs**
+**Best for:- Heavy training, long runs**
 
 ### 2) Google Colab (Best for quick work)
 - Free T4 GPU
@@ -34,7 +34,7 @@ There are 2 commonly used free cloud notebook platforms that provide GPUs:
 - Usage hours are not fixed and depend on system load; sessions may disconnect frequently
 - Doesn’t run when tab is closed
 
-**Best for: Testing, small experiments**
+**Best for:- Testing, small experiments**
 
 ### My Thoughts:-
 - In simple terms, the P100 is a stronger GPU for data science and transformer workloads.
@@ -50,7 +50,7 @@ There are 2 commonly used free cloud notebook platforms that provide GPUs:
 ## Quick Setup
 
 **[Kaggle](https://www.kaggle.com/)** :-
-Create/open a notebook → Settings → Accelerator → select GPU.
+Create/open a notebook -> Settings -> Accelerator -> select GPU.
 Monitor usage via *Draft Session* panel. 
 
 For T4×2, use `torch.nn.DataParallel` (PyTorch)
@@ -58,7 +58,7 @@ or `tf.distribute.MirroredStrategy` (TensorFlow) to utilize both GPUs, they won'
 run automatically without this.
 
 **[Colab](https://colab.research.google.com/)** :-
-Open notebook → Runtime → Change runtime type → T4 GPU.
+Open notebook -> Runtime -> Change runtime type ->T4 GPU.
 
 Note: training pauses if the tab is closed or session times out.
 
@@ -88,9 +88,9 @@ Note: training pauses if the tab is closed or session times out.
 - Free unlimited storage for public model and dataset repos.
 - Hugging Face is best for **heavy models** and most compatible with [Gradio](https://www.gradio.app/) for easy web framework for your projects.
 
-Frontend/web → [Vercel](https://vercel.com/) / [Netlify](https://www.netlify.com/)
+Frontend/web :- [Vercel](https://vercel.com/) / [Netlify](https://www.netlify.com/)
 
-Backend/light ML → [Render](https://render.com/) / [Railway](https://railway.com/).
+Backend/light ML :- [Render](https://render.com/) / [Railway](https://railway.com/).
 
 ## YouTube / Learning Resources
 
@@ -106,9 +106,9 @@ Backend/light ML → [Render](https://render.com/) / [Railway](https://railway.c
 - [d2l.ai](https://d2l.ai) :- Dive into Deep Learning. Interactive textbook with theory with runnable code. Covers everything from linear models to transformers.
 
 ## GitHub Repos
-- [CS Video Courses](https://github.com/Developer-Y/cs-video-courses) — curated list of CS courses with video lectures
+- [CS Video Courses](https://github.com/Developer-Y/cs-video-courses) :— curated list of CS courses with video lectures
 - [500 AI/ML Projects with Code](https://github.com/ashishpatel26/500-AI-Machine-learning-Deep-learning-Computer-vision-NLP-Projects-with-code)
-- [MLOps Zoomcamp](https://github.com/DataTalksClub/mlops-zoomcamp) — free MLOps course by DataTalks.Club
+- [MLOps Zoomcamp](https://github.com/DataTalksClub/mlops-zoomcamp) :— free MLOps course by DataTalks.Club
 
 ## Free AI Tools
 
@@ -117,10 +117,10 @@ Backend/light ML → [Render](https://render.com/) / [Railway](https://railway.c
   
 ## My Workflow
 
-1. Dataset → Kaggle / Hugging Face  
-2. Data Processing → Roboflow (for computer vision tasks)  
-3. Training → Kaggle (P100)  
-4. Deployment → Hugging Face Spaces / Render  
+1. Dataset :- Kaggle / Hugging Face  
+2. Data Processing :- Roboflow (for computer vision tasks)  
+3. Training :- Kaggle (P100)  
+4. Deployment :- Hugging Face Spaces / Render  
 
 This is the exact pipeline I use for most of my projects.
 
