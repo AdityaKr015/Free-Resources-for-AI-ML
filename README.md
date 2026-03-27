@@ -1,4 +1,4 @@
-# Train, build, and deploy AI/ML projects - completely FREE.
+# Train, build, and deploy AI/ML projects completely FREE.
 
 This repo contains the exact tools I use to:
 - Train ML/DL models
@@ -94,16 +94,16 @@ Backend/light ML → [Render](https://render.com/) / [Railway](https://railway.c
 
 ## YouTube / Learning Resources
 
-- [Campus X](https://www.youtube.com/@campusx-official) — In-depth Hindi lectures covering 
-  Math for ML, classical ML, deep learning, LLMs, and Agentic AI. Includes practical project implementations. Best structured course channel in Hindi.
+- [Campus X](https://www.youtube.com/@campusx-official) :- In-depth Hindi lectures covering Math for ML, classical ML, deep learning, LLMs, and Agentic AI. Includes practical project implementations. Best structured course channel in Hindi.
 
-- [Krish Naik](https://www.youtube.com/@krishnaik06) — Similar to Campus X but in English. Good for end-to-end project walkthroughs and staying updated on new tools/frameworks.
+- [Krish Naik](https://www.youtube.com/@krishnaik06) :- Similar to Campus X but in English. Good for end-to-end project walkthroughs and staying updated on new tools/frameworks.
 
-- [Andrej Karpathy](https://www.youtube.com/@AndrejKarpathy) — Ex-OpenAI/Tesla. Builds neural networks from scratch (GPT, tokenizers, backprop). Best channel if you want deep intuition over how things actually work.
- - [3Blue1Brown](https://www.youtube.com/@3blue1brown) — Visual explanations of Maths and 
+- [Andrej Karpathy](https://www.youtube.com/@AndrejKarpathy) :- Ex-OpenAI/Tesla. Builds neural networks from scratch (GPT, tokenizers, backprop). Best channel if you want deep intuition over how things actually work.
+
+ - [3Blue1Brown](https://www.youtube.com/@3blue1brown) :- Visual explanations of Maths and 
   Neural Networks. Highly recommended for building intuition before diving into code.
 
-- [d2l.ai](https://d2l.ai) — Dive into Deep Learning. Interactive textbook with theory with runnable code. Covers everything from linear models to transformers.
+- [d2l.ai](https://d2l.ai) :- Dive into Deep Learning. Interactive textbook with theory with runnable code. Covers everything from linear models to transformers.
 
 ## GitHub Repos
 - [CS Video Courses](https://github.com/Developer-Y/cs-video-courses) — curated list of CS courses with video lectures
