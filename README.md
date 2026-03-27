@@ -99,8 +99,6 @@ Backend/light ML → [Render](https://render.com/) / [Railway](https://railway.c
 - [Andrej Karpathy](https://www.youtube.com/@AndrejKarpathy)
 - [3blue1brown](https://www.youtube.com/@3blue1brown) :- Maths and Neural Networks. visual explanations, highly recommended for intuition
 
-- d2l.ai (Dive into Deep Learning) — interactive textbook with code
-
 ## GitHub Repos
 - [CS Video Courses](https://github.com/Developer-Y/cs-video-courses) — curated list of CS courses with video lectures
 - [500 AI/ML Projects with Code](https://github.com/ashishpatel26/500-AI-Machine-learning-Deep-learning-Computer-vision-NLP-Projects-with-code)
@@ -110,6 +108,8 @@ Backend/light ML → [Render](https://render.com/) / [Railway](https://railway.c
 
 [LMArena](https://arena.ai/) :- Compare and chat with many AI models for free. Some features may require signup.
 
+- d2l.ai (Dive into Deep Learning) — interactive textbook with code
+  
 ## My Workflow
 
 1. Dataset → Kaggle / Hugging Face  
