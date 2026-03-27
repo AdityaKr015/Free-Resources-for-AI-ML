@@ -103,8 +103,7 @@ Backend/light ML → [Render](https://render.com/) / [Railway](https://railway.c
  - [3Blue1Brown](https://www.youtube.com/@3blue1brown) — Visual explanations of Maths and 
   Neural Networks. Highly recommended for building intuition before diving into code.
 
-- [d2l.ai](https://d2l.ai) — Dive into Deep Learning. Interactive textbook with theory + 
-  runnable code. Covers everything from linear models to transformers.
+- [d2l.ai](https://d2l.ai) — Dive into Deep Learning. Interactive textbook with theory with runnable code. Covers everything from linear models to transformers.
 
 ## GitHub Repos
 - [CS Video Courses](https://github.com/Developer-Y/cs-video-courses) — curated list of CS courses with video lectures
