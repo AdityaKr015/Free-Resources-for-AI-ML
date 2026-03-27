@@ -36,7 +36,7 @@ There are 2 commonly used free cloud notebook platforms that provide GPUs:
 
 **Best for:- Testing, small experiments**
 
-### My Thoughts:-
+### My Thoughts
 - In simple terms, the P100 is a stronger GPU for data science and transformer workloads.
 - Its HBM2 memory delivers much higher bandwidth (732 GB/s vs T4's 320 GB/s), which makes a real difference on large models.
 - I personally have shifted to Kaggle for its **high GPU power and consistent connection.**
