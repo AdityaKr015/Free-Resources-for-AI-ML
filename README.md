@@ -1,4 +1,4 @@
-Train, build, and deploy AI/ML projects - completely FREE.
+# Train, build, and deploy AI/ML projects - completely FREE.
 
 This repo contains the exact tools I use to:
 - Train ML/DL models
