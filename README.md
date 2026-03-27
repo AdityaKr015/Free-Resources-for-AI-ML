@@ -108,7 +108,7 @@ Backend/light ML → [Render](https://render.com/) / [Railway](https://railway.c
 
 [LMArena](https://arena.ai/) :- Compare and chat with many AI models for free. Some features may require signup.
 
-- d2l.ai (Dive into Deep Learning) — interactive textbook with code
+d2l.ai (Dive into Deep Learning) — interactive textbook with code
   
 ## My Workflow
 
