@@ -92,12 +92,19 @@ Frontend/web → [Vercel](https://vercel.com/) / [Netlify](https://www.netlify.c
 
 Backend/light ML → [Render](https://render.com/) / [Railway](https://railway.com/).
 
-## Youtube Lecture
+## YouTube / Learning Resources
 
-- [Campus X](https://www.youtube.com/@campusx-official) 
-- [Krish Naik](https://www.youtube.com/@krishnaik06)
-- [Andrej Karpathy](https://www.youtube.com/@AndrejKarpathy)
-- [3blue1brown](https://www.youtube.com/@3blue1brown) :- Maths and Neural Networks. visual explanations, highly recommended for intuition
+- [Campus X](https://www.youtube.com/@campusx-official) — In-depth Hindi lectures covering 
+  Math for ML, classical ML, deep learning, LLMs, and Agentic AI. Includes practical project implementations. Best structured course channel in Hindi.
+
+- [Krish Naik](https://www.youtube.com/@krishnaik06) — Similar to Campus X but in English. Good for end-to-end project walkthroughs and staying updated on new tools/frameworks.
+
+- [Andrej Karpathy](https://www.youtube.com/@AndrejKarpathy) — Ex-OpenAI/Tesla. Builds neural networks from scratch (GPT, tokenizers, backprop). Best channel if you want deep intuition over how things actually work.
+ - [3Blue1Brown](https://www.youtube.com/@3blue1brown) — Visual explanations of Maths and 
+  Neural Networks. Highly recommended for building intuition before diving into code.
+
+- [d2l.ai](https://d2l.ai) — Dive into Deep Learning. Interactive textbook with theory + 
+  runnable code. Covers everything from linear models to transformers.
 
 ## GitHub Repos
 - [CS Video Courses](https://github.com/Developer-Y/cs-video-courses) — curated list of CS courses with video lectures
@@ -108,7 +115,6 @@ Backend/light ML → [Render](https://render.com/) / [Railway](https://railway.c
 
 [LMArena](https://arena.ai/) :- Compare and chat with many AI models for free. Some features may require signup.
 
-d2l.ai (Dive into Deep Learning) — interactive textbook with code
   
 ## My Workflow
 
