@@ -10,7 +10,7 @@ No paid stuff,everything free to use.
 ## Table of Contents
 - [Model Training (Free GPUs)](#model-training)
 - [Datasets & Pre-trained Models](#datasets--pre-trained-models)
-- [Computer Vision — Roboflow](#computer-vision)
+- [Computer Vision](#computer-vision)
 - [Deployment](#deployment)
 - [YouTube / Learning Resources](#youtube-lecture)
 - [GitHub Repos](#github-repos)
