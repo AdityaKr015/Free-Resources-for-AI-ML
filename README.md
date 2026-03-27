@@ -1,21 +1,23 @@
-This repo contains the exact free tools I use to:
+Train, build, and deploy AI/ML projects - completely FREE.
+
+This repo contains the exact tools I use to:
 - Train ML/DL models
-- Get datasets
+- Find datasets
 - Deploy projects
 
 No paid stuff,everything free to use.
 
 ## Table of Contents
-- [Model Training (Free GPUs)](#model-training-)
+- [Model Training (Free GPUs)](#model-training)
 - [Datasets & Pre-trained Models](#datasets--pre-trained-models)
-- [Computer Vision — Roboflow](#computer-vision--roboflow)
+- [Computer Vision — Roboflow](#computer-vision)
 - [Deployment](#deployment)
-- [YouTube / Learning Resources](#youtube--learning-resources)
+- [YouTube / Learning Resources](#youtube-lecture)
 - [GitHub Repos](#github-repos)
 - [Free AI Tools](#free-ai-tools)
   
 ## Model Training
-There are mainly 2 best free jupyter notebook cloud platform for model train with free GPU
+There are 2 commonly used free cloud notebook platforms that provide GPUs:
 
 ### 1) Kaggle (Best for Training)
 - Free GPUs (T4 x2 / P100)
@@ -29,37 +31,39 @@ There are mainly 2 best free jupyter notebook cloud platform for model train wit
 - Free T4 GPU
 - Easy to use
 - Google Drive integration
-- Not fixed usages hours, depends on load but disconnects often 
+- Usage hours are not fixed and depend on system load; sessions may disconnect frequently
 - Doesn’t run when tab is closed
 
 **Best for: Testing, small experiments**
 
 ### My Thoughts:-
 - In simple terms, the P100 is a stronger GPU for data science and transformer workloads.
-- The reason is its HBM2 memory much higher bandwidth (732 GB/s vs T4's 320 GB/s) makes a real difference on large models.
-- I personally have shifted to Kaggle for it's **high gpu power and consistent connection.**
+- Its HBM2 memory delivers much higher bandwidth (732 GB/s vs T4's 320 GB/s), which makes a real difference on large models.
+- I personally have shifted to Kaggle for its **high GPU power and consistent connection.**
  
 ## Quick Setup
 
 **[Kaggle](https://www.kaggle.com/)** Create/open a notebook → Settings → Accelerator → select GPU.
-Monitor usage via *Draft Session* panel. For T4×2, use `torch.nn.DataParallel`
-or `tf.distribute.MirroredStrategy` to utilize both GPUs, they won't both 
+Monitor usage via *Draft Session* panel. For T4×2, use `torch.nn.DataParallel` (PyTorch)
+or `tf.distribute.MirroredStrategy` (TensorFlow) to utilize both GPUs, they won't both 
 run automatically without this.
 
 **[Colab](https://colab.research.google.com/)** Open notebook → Runtime → Change runtime type → T4 GPU.
 Note: training pauses if the tab is closed or session times out.
 
-Which GPU to choose? In some case P100 is just better because of  high memory bandwidth but but I'd suggest asking an AI which GPU(T4 x 2 or P100) should you based on project. and **dont forget to ask for code cell to use both t4 gpus**
+### Which GPU should you choose?
 
-Both **PyTorch** and **Tensorflow** has compatibility to run parallel gpu training.
+- **P100** → Best for large models (higher memory bandwidth)
+- **T4 x2** → Useful if you know how to utilize multi-GPU
+- If you're unsure → start with **P100**
 
 ## Datasets & Pre-trained Models
-- Kaggle is one of the best source of dataset.
+- Kaggle is one of the best sources for datasets.
 - [Hugging Face](https://huggingface.co/) has datasets and pre-trained models.
 
-## Computer Vision — Roboflow Universe
+## Computer Vision
 
-[Roboflow Universe](https://universe.roboflow.com/) is the best source for computer vision datasets and models (classification, detection, segmentation, OBB, keypoints, and more).
+[Roboflow Universe](https://universe.roboflow.com/) is a great platform for computer vision datasets and models (classification, detection, segmentation, OBB, keypoints, and more).
 
 **Dataset Tools**
 - Upload, resize, and version your datasets
@@ -98,5 +102,26 @@ Backend/light ML → [Render](https://render.com/) / [Railway](https://railway.c
 - [500 AI/ML Projects with Code](https://github.com/ashishpatel26/500-AI-Machine-learning-Deep-learning-Computer-vision-NLP-Projects-with-code)
 - [MLOps Zoomcamp](https://github.com/DataTalksClub/mlops-zoomcamp) — free MLOps course by DataTalks.Club
 
+## Free AI Tools
 
 [LMArena](https://arena.ai/) :- Compare and chat with many AI models for free. Some features may require signup.
+
+## My Workflow
+
+1. Dataset → Kaggle / Hugging Face  
+2. Data Processing → Roboflow (for computer vision tasks)  
+3. Training → Kaggle (P100)  
+4. Deployment → Hugging Face Spaces / Render  
+
+This is the exact pipeline I use for most of my projects.
+
+## Why this repo?
+
+I created this to help people who:
+- Don’t have high-end laptops
+- Can’t afford paid GPUs
+- Still want to build real AI/ML projects
+
+Everything here is tested and actually used by me.
+
+If this repo helps you, consider giving it a star. ⭐ 
