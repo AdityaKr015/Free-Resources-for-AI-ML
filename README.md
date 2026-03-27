@@ -43,12 +43,17 @@ There are 2 commonly used free cloud notebook platforms that provide GPUs:
  
 ## Quick Setup
 
-**[Kaggle](https://www.kaggle.com/)** Create/open a notebook → Settings → Accelerator → select GPU.
-Monitor usage via *Draft Session* panel. For T4×2, use `torch.nn.DataParallel` (PyTorch)
+**[Kaggle](https://www.kaggle.com/)** :-
+Create/open a notebook → Settings → Accelerator → select GPU.
+Monitor usage via *Draft Session* panel. 
+
+For T4×2, use `torch.nn.DataParallel` (PyTorch)
 or `tf.distribute.MirroredStrategy` (TensorFlow) to utilize both GPUs, they won't both 
 run automatically without this.
 
-**[Colab](https://colab.research.google.com/)** Open notebook → Runtime → Change runtime type → T4 GPU.
+**[Colab](https://colab.research.google.com/)** :-
+Open notebook → Runtime → Change runtime type → T4 GPU.
+
 Note: training pauses if the tab is closed or session times out.
 
 ### Which GPU should you choose?
@@ -78,14 +83,13 @@ Note: training pauses if the tab is closed or session times out.
 - Use pre-trained models for quick inference and testing
 
 ## Deployment
-
-On Hugging Face you can deploy your project for live demo. 
-
-Free unlimited storage for public model and dataset repos.
-
-Hugging Face is best for **heavy models** and most compatible with [Gradio](https://www.gradio.app/) for easy web framework for your projects.
+[Hugging Face](https://huggingface.co/):-
+- On Hugging Face you can deploy your project for live demo. 
+- Free unlimited storage for public model and dataset repos.
+- Hugging Face is best for **heavy models** and most compatible with [Gradio](https://www.gradio.app/) for easy web framework for your projects.
 
 Frontend/web → [Vercel](https://vercel.com/) / [Netlify](https://www.netlify.com/)
+
 Backend/light ML → [Render](https://render.com/) / [Railway](https://railway.com/).
 
 ## Youtube Lecture
