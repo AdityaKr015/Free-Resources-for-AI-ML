@@ -34,7 +34,7 @@ There are 2 commonly used free cloud notebook platforms that provide GPUs:-
 - Google Drive integration
 - Usage hours are not fixed and depend on system load; sessions may disconnect frequently
 - Doesn’t run when tab is closed
-- System Specs:- **2 CPU cores, 12-13 GB RAM, 100+ GB Storage** 
+- System Specs:- **2 CPU cores, 12-13 GB RAM, 100+ GB Disk Storage** 
 
 **Best for:- Testing, small experiments**
 
