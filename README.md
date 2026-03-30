@@ -23,8 +23,9 @@ There are 2 commonly used free cloud notebook platforms that provide GPUs:
 - Free GPUs (T4 x2 / P100)
 - 30 hours/week usage resets on Saturday 
 - Works even when tab is closed 
-- Long sessions (~9 hours)
-
+- Long sessions (~12 hours)
+- System Specs:- 4 CPU cores, 29-30 GB RAM (For both GPU)
+  
 **Best for:- Heavy training, long runs**
 
 ### 2) Google Colab (Best for quick work)
@@ -33,6 +34,7 @@ There are 2 commonly used free cloud notebook platforms that provide GPUs:
 - Google Drive integration
 - Usage hours are not fixed and depend on system load; sessions may disconnect frequently
 - Doesn’t run when tab is closed
+- System Specs:- 2 CPU cores, 12-13 GB RAM 
 
 **Best for:- Testing, small experiments**
 
