@@ -17,24 +17,24 @@ No paid stuff,everything free to use.
 - [Free AI Tools](#free-ai-tools)
   
 ## Model Training
-There are 2 commonly used free cloud notebook platforms that provide GPUs:
+There are 2 commonly used free cloud notebook platforms that provide GPUs:-
 
 ### 1) Kaggle (Best for Training)
-- Free GPUs (T4 x2 / P100)
+- Free GPUs **{T4 x2 (30 GB VRAM) / P100 (16 GB VRAM)}**
 - 30 hours/week usage resets on Saturday 
 - Works even when tab is closed 
-- Long sessions (~12 hours)
-- System Specs:- 4 CPU cores, 29-30 GB RAM (For both GPU)
+- Long sessions **(~12 hours)**
+- System Specs:- **4 CPU cores, 29-30 GB RAM, 50-60 GB Disk Storage**
   
 **Best for:- Heavy training, long runs**
 
 ### 2) Google Colab (Best for quick work)
-- Free T4 GPU
+- Free T4 GPU **(15 GB VRAM)**
 - Easy to use
 - Google Drive integration
 - Usage hours are not fixed and depend on system load; sessions may disconnect frequently
 - Doesn’t run when tab is closed
-- System Specs:- 2 CPU cores, 12-13 GB RAM 
+- System Specs:- **2 CPU cores, 12-13 GB RAM, 100+ GB Storage** 
 
 **Best for:- Testing, small experiments**
 
