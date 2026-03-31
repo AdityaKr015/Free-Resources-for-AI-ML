@@ -23,7 +23,7 @@ There are 2 commonly used free cloud notebook platforms that provide GPUs:-
 - Free GPUs **{T4 x2 (30 GB VRAM) / P100 (16 GB VRAM)}**
 - 30 hours/week usage resets on Saturday 
 - Long sessions **(~12 hours)**
-- The "Set and Forget" Method: Use "Save and Run All (Commit)". This let notebook run in background session on Kaggle's servers. You can turn off your laptop, lose internet, or even travel; the notebook will run for up to 12 hours and save your weights automatically.
+- Use "Save and Run All (Commit)". This let notebook run in background session on Kaggle's servers. You can turn off your laptop, lose internet, or even travel; the notebook will run for up to 12 hours and save your weights automatically.
 - System Specs:- **4 CPU cores, 29-30 GB RAM, 50-60 GB Disk Storage**
   
 **Best for:- Heavy training, long runs**
