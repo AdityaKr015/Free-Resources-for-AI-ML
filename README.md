@@ -11,7 +11,7 @@ No paid stuff,everything free to use.
 - [Model Training (Free GPUs)](#model-training)
 - [Datasets & Pre-trained Models](#datasets--pre-trained-models)
 - [Computer Vision](#computer-vision)
-- [Deployment](#deployment)
+- [Deployment & Optimization](#deployment-&-optimization)
 - [YouTube / Learning Resources](#youtube-lecture)
 - [GitHub Repos](#github-repos)
 - [Free AI Tools](#free-ai-tools)
@@ -22,8 +22,8 @@ There are 2 commonly used free cloud notebook platforms that provide GPUs:-
 ### 1) Kaggle (Best for Training)
 - Free GPUs **{T4 x2 (30 GB VRAM) / P100 (16 GB VRAM)}**
 - 30 hours/week usage resets on Saturday 
-- Works even when tab is closed 
 - Long sessions **(~12 hours)**
+- The "Set and Forget" Method: Use "Save and Run All (Commit)". This let notebook run in background session on Kaggle's servers. You can turn off your laptop, lose internet, or even travel; the notebook will run for up to 12 hours and save your weights automatically.
 - System Specs:- **4 CPU cores, 29-30 GB RAM, 50-60 GB Disk Storage**
   
 **Best for:- Heavy training, long runs**
@@ -37,6 +37,12 @@ There are 2 commonly used free cloud notebook platforms that provide GPUs:-
 - System Specs:- **2 CPU cores, 12-13 GB RAM, 100+ GB Disk Storage** 
 
 **Best for:- Testing, small experiments**
+
+### Common Mistake
+
+Mistake: "I closed my tab and my training stopped!"
+
+The Fix: You likely used an Interactive Session. Always use the 'Submit' or 'Save Version' option -> 'Save and Run All' button for actual training.
 
 ### My Thoughts
 - In simple terms, the P100 is a stronger GPU for data science and transformer workloads.
@@ -84,15 +90,25 @@ Note: training pauses if the tab is closed or session times out.
 - Easy model deployment with a featured workflow builder (similar to n8n)
 - Use pre-trained models for quick inference and testing
 
-## Deployment
-[Hugging Face](https://huggingface.co/):-
-- On Hugging Face you can deploy your project for live demo. 
-- Free unlimited storage for public model and dataset repos.
-- Hugging Face is best for **heavy models** and most compatible with [Gradio](https://www.gradio.app/) for easy web framework for your projects.
+## Deployment & Optimization
 
-Frontend/web :- [Vercel](https://vercel.com/) / [Netlify](https://www.netlify.com/)
+### Model Optimization (The "Secret" to Smooth Demos)
+- Don't deploy raw training model file (.pt, .keras, .h5) directly. They are heavy and slow. I suggest always optimize your model first.
+- Export to ONNX: Use the ONNX (Open Neural Network Exchange) format to reduce inference latency by ~30-40%.
+- Remove Dependencies: ONNX models run using onnxruntime, which is much lighter (200 MBs) than installing the full PyTorch or TensorFlow library (2-4 GBs) on your server.
+- Quantization: If your model is too large, export with half=True (FP16) to cut the file size in half with almost zero loss in accuracy.
 
-Backend/light ML :- [Render](https://render.com/) / [Railway](https://railway.com/).
+### Where to Deploy
+- [Hugging Face](https://huggingface.co/spaces)(Best for ML Demos):
+- Live Demos: I suggest [Gradio](https://www.gradio.app/) or [Streamlit ](https://streamlit.io/)to build a web interface in pure Python easily.
+- Hardware: Provides free CPU basic tiers. If your model is optimized (ONNX), it will run smoothly even without a free GPU.
+- Storage: Free unlimited storage for public model weights and dataset repositories.
+
+[Render](https://render.com/) / [Railway](https://railway.com/).(Best for Backends):
+- Great for hosting a FastAPI or Flask web server that serves your model as an API.
+
+[Vercel](https://vercel.com/) / [Netlify](https://www.netlify.com/) (Best for Frontends):
+- Use these if you built a custom React/Vue/Next.js frontend to talk to your Hugging Face or Render backend.
 
 ## YouTube / Learning Resources
 
@@ -121,8 +137,9 @@ Backend/light ML :- [Render](https://render.com/) / [Railway](https://railway.co
 
 1. Dataset :- Kaggle / Hugging Face  
 2. Data Processing :- Roboflow (for computer vision tasks)  
-3. Training :- Kaggle (P100)  
-4. Deployment :- Hugging Face Spaces / Render  
+3. Training :- Kaggle (P100)
+4. Testing :- On T4 GPU (ONNX format)
+5. Deployment :- Hugging Face Spaces / Render  
 
 This is the exact pipeline I use for most of my projects.
 
