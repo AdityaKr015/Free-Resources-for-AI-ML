@@ -94,7 +94,7 @@ Note: training pauses if the tab is closed or session times out.
 
 ### Model Optimization (The "Secret" to Smooth Demos)
 - Don't deploy raw training model file (.pt, .keras, .h5) directly. They are heavy and slow. I suggest always optimize your model first.
-- Export to ONNX: Use the ONNX (Open Neural Network Exchange) format to reduce inference latency by ~30-40%.
+- Export to ONNX: Use the ONNX (Open Neural Network Exchange) format to reduce inference latency. 
 - Remove Dependencies: ONNX models run using onnxruntime, which is much lighter (200 MBs) than installing the full PyTorch or TensorFlow library (2-4 GBs) on your server.
 - Quantization: If your model is too large, export with half=True (FP16) to cut the file size in half with almost zero loss in accuracy.
 
@@ -124,9 +124,9 @@ Note: training pauses if the tab is closed or session times out.
 - [d2l.ai](https://d2l.ai) :- Dive into Deep Learning. Interactive textbook with theory with runnable code. Covers everything from linear models to transformers.
 
 ## GitHub Repos
-- [CS Video Courses](https://github.com/Developer-Y/cs-video-courses) :— curated list of CS courses with video lectures
+- [CS Video Courses](https://github.com/Developer-Y/cs-video-courses) :— Detailed list of CS courses with video lectures
 - [500 AI/ML Projects with Code](https://github.com/ashishpatel26/500-AI-Machine-learning-Deep-learning-Computer-vision-NLP-Projects-with-code)
-- [MLOps Zoomcamp](https://github.com/DataTalksClub/mlops-zoomcamp) :— free MLOps course by DataTalks.Club
+- [MLOps Zoomcamp](https://github.com/DataTalksClub/mlops-zoomcamp) :— Free MLOps course by DataTalks.Club
 
 ## Free AI Tools
 
