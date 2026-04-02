@@ -51,8 +51,8 @@ The Fix: You likely used an Interactive Session. Always use the 'Submit' or 'Sav
 
 ### Which GPU should you choose?
 
-- **P100**:-Best for large models (higher memory bandwidth)
-- **T4 x2**:-Useful if you know how to utilize multi-GPU
+- **P100**:-Best for large models, better metrics. (higher memory bandwidth)
+- **T4 x2**:-Useful if you know how to utilize multi-GPU. Faster training but  worse metrics than p100.
 - If you're unsure:-start with **P100**
 
 ## Quick Setup
