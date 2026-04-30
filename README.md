@@ -65,8 +65,29 @@ For T4×2, use `torch.nn.DataParallel` (PyTorch)
 or `tf.distribute.MirroredStrategy` (TensorFlow) to utilize both GPUs, they won't both 
 run automatically without this.
 
+<img width="319" height="180" alt="image" src="https://github.com/user-attachments/assets/f09713f7-bbd0-47a5-8f53-16e3cee9d46e" />
+
+<br><br>
+
+<img width="201" height="546" alt="image" src="https://github.com/user-attachments/assets/1649514e-a94c-4be4-b746-e60bafd6a612" />
+
+<br><br>
+
 **[Colab](https://colab.research.google.com/)** :-
 Open notebook -> Runtime -> Change runtime type ->T4 GPU.
+<br><br>
+
+<img width="349" height="373" alt="image" src="https://github.com/user-attachments/assets/8922d183-16d2-4689-9d7c-15e0a6a29276" />
+
+<br><br>
+
+<img width="549" height="546" alt="image" src="https://github.com/user-attachments/assets/73f37708-cce6-4ae2-94d8-df5635ed433a" />
+
+<br><br>
+
+<img width="446" height="411" alt="image" src="https://github.com/user-attachments/assets/b5227ed3-eb6a-4646-af59-c7b627445bd9" />
+
+<br><br>
 
 Note: training pauses if the tab is closed or session times out.
 
