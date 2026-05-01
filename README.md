@@ -45,15 +45,15 @@ Mistake: "I closed my tab and my training stopped!"
 The Fix: You likely used an Interactive Session. Always use the 'Submit' or 'Save Version' option -> 'Save and Run All' button for actual training.
 
 ### My Thoughts
-- In simple terms, the P100 is a stronger GPU for data science and transformer workloads.
-- Its HBM2 memory delivers much higher bandwidth (732 GB/s vs T4's 320 GB/s), which makes a real difference on large models.
+- In simple terms, the T4 x 2 is 2x~ faster than P100 and let you use larger batch.
+- It's just P100 give 1-3% better metrics because it's a single gpu and does have to communicate with another gpu.. but it's takes double time than T4 x 2.
 - I personally have shifted to Kaggle for its **high GPU power and consistent connection.**
 
 ### Which GPU should you choose?
 
-- **P100**:-Best for large models, better metrics. (higher memory bandwidth)
-- **T4 x2**:-Useful if you know how to utilize multi-GPU. Faster training but  worse metrics than p100.
-- If you're unsure:-start with **P100**
+- **T4 x 2**:-Best for anything, it's 2x~ faster and can process larger batch too. (Don't forget to utilise dual gpu)
+- **P100**:- Strong gpu if model isn't too heavy, most time just ignore.
+- If you're unsure:-start with **T4 x 2**
 
 ## Quick Setup
 
@@ -64,6 +64,8 @@ Monitor usage via *Draft Session* panel.
 For T4×2, use `torch.nn.DataParallel` (PyTorch)
 or `tf.distribute.MirroredStrategy` (TensorFlow) to utilize both GPUs, they won't both 
 run automatically without this.
+
+In Ultralytic's YOLO, in model training code, set device =[0,1] for dual and [0] for single gpu.
 
 <img width="319" height="180" alt="image" src="https://github.com/user-attachments/assets/f09713f7-bbd0-47a5-8f53-16e3cee9d46e" />
 
@@ -115,9 +117,9 @@ Note: training pauses if the tab is closed or session times out.
 
 ### Model Optimization (The "Secret" to Smooth Demos)
 - Don't deploy raw training model file (.pt, .keras, .h5) directly. They are heavy and slow. I suggest always optimize your model first.
-- Export to ONNX: Use the ONNX (Open Neural Network Exchange) format to reduce inference latency. 
+- Export to ONNX: Use the ONNX (Open Neural Network Exchange, an universal format) format to reduce latency, with precision f16 it gets much faster inference on gpu and for cpu int8 is better with 1-3% less accuracy.
+- Export to OpenVINO: Use the OpenVINO for **only intel cpu** for local machine inference with int8 precision for much faster inference with cost of 1-3% accuracy.
 - Remove Dependencies: ONNX models run using onnxruntime, which is much lighter (200 MBs) than installing the full PyTorch or TensorFlow library (2-4 GBs) on your server.
-- Quantization: If your model is too large, export with half=True (FP16) to cut the file size in half with almost zero loss in accuracy.
 
 ### Where to Deploy
 - [Hugging Face](https://huggingface.co/spaces)(Best for ML Demos):
@@ -133,9 +135,9 @@ Note: training pauses if the tab is closed or session times out.
 
 ## YouTube / Learning Resources
 
-- [Campus X](https://www.youtube.com/@campusx-official) :- In-depth Hindi lectures covering Math for ML, classical ML, deep learning, LLMs, and Agentic AI. Includes practical project implementations. Best structured course channel in Hindi.
+- [Campus X](https://www.youtube.com/@campusx-official) :- In depth Hindi lectures covering Math for ML, classical ML, deep learning, LLMs, and Agentic AI. Includes practical project implementations. Best structured course channel in Hindi.
 
-- [Krish Naik](https://www.youtube.com/@krishnaik06) :- Similar to Campus X but in English. Good for end-to-end project walkthroughs and staying updated on new tools/frameworks.
+- [Krish Naik](https://www.youtube.com/@krishnaik06) :- Similar to Campus X but in Hinglish. Good for end-to-end project walkthroughs and staying updated on new tools/frameworks.
 
 - [Andrej Karpathy](https://www.youtube.com/@AndrejKarpathy) :- Ex-OpenAI/Tesla. Builds neural networks from scratch (GPT, tokenizers, backprop). Best channel if you want deep intuition over how things actually work.
 
@@ -158,8 +160,8 @@ Note: training pauses if the tab is closed or session times out.
 
 1. Dataset :- Kaggle / Hugging Face  
 2. Data Processing :- Roboflow (for computer vision tasks)  
-3. Training :- Kaggle (P100)
-4. Testing :- On T4 GPU (ONNX format)
+3. Training :- Kaggle (T4 x 2)
+4. Testing :- On local cpu/t4 gpu (ONNX Fp16/int8 format)
 5. Deployment :- Hugging Face Spaces / Render  
 
 This is the exact pipeline I use for most of my projects.
