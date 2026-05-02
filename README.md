@@ -132,8 +132,8 @@ Note: training pauses if the tab is closed or session times out.
 
 ### Model Optimization (The "Secret" to Smooth Demos)
 - Don't deploy raw training model file (.pt, .keras, .h5) directly. They are heavy and slow. I suggest always optimize your model first.
-- Export to ONNX: Use the ONNX (Open Neural Network Exchange, an universal format) format to reduce latency, with precision f16 it gets much faster inference on gpu and for cpu int8 is better with 1-3% less accuracy.
-- Export to OpenVINO: Use the OpenVINO for **only intel cpu** for local machine inference with int8 precision for much faster inference with cost of 1-3% accuracy.
+- Export to ONNX: Use the ONNX (Open Neural Network Exchange, an universal format) format to reduce latency, with precision FP16 it gets much faster inference on gpu and for cpu INT8 is better with 1-3% less accuracy.
+- Export to OpenVINO: Use the OpenVINO for **only intel cpu** for local machine inference with INT8 precision for much faster inference with cost of 1-3% accuracy.
 - Remove Dependencies: ONNX models run using onnxruntime, which is much lighter (200 MBs) than installing the full PyTorch or TensorFlow library (2-4 GBs) on your server.
 
 ### Where to Deploy
@@ -168,7 +168,7 @@ Note: training pauses if the tab is closed or session times out.
 
 ## Free AI Tools
 
-[LMArena](https://arena.ai/) :- Compare and chat with many AI models for free. Some features may require signup.
+[LMArena](https://arena.ai/) :- Compare and chat with many AI models for free. Signup using [temporary email.](https://temp-mail.org/)
 
   
 ## My Workflow
@@ -179,7 +179,7 @@ Note: training pauses if the tab is closed or session times out.
 4. Testing :- On local cpu/t4 gpu (ONNX Fp16/int8 format)
 5. Deployment :- Hugging Face Spaces / Render  
 
-This is the exact pipeline I use for most of my projects.
+This is the pipeline I use for most of my projects.
 
 ## Why this repo?
 
