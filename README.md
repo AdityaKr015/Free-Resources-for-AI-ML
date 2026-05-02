@@ -23,7 +23,7 @@ There are 2 commonly used free cloud notebook platforms that provide GPUs:-
 - Free GPUs **{T4 x2 (30 GB VRAM) / P100 (16 GB VRAM)}**
 - 30 hours/week usage resets on Saturday 
 - Long sessions **(~12 hours)**
-- Use "Save and Run All (Commit)". This let notebook run in background session on Kaggle's servers. You can turn off your laptop, lose internet, or even travel; the notebook will run for up to 12 hours and save your weights automatically.
+- Use "Save and Run All (Commit)". This let notebook run in background session on Kaggle's servers for up to 12 hours and save your weights automatically. You can turn off your laptop, lose internet, or even travel.
 - System Specs:- **4 CPU cores, 29-30 GB RAM, 50-60 GB Disk Storage**
   
 **Best for:- Heavy training, long runs**
@@ -32,7 +32,7 @@ There are 2 commonly used free cloud notebook platforms that provide GPUs:-
 - Free T4 GPU **(15 GB VRAM)**
 - Easy to use
 - Google Drive integration
-- Usage hours are not fixed and depend on system load; sessions may disconnect frequently
+- Usage hours are not fixed and depend on system load, sessions may disconnect frequently
 - Doesn’t run when tab is closed
 - System Specs:- **2 CPU cores, 12-13 GB RAM, 100+ GB Disk Storage** 
 
@@ -65,31 +65,46 @@ For T4×2, use `torch.nn.DataParallel` (PyTorch)
 or `tf.distribute.MirroredStrategy` (TensorFlow) to utilize both GPUs, they won't both 
 run automatically without this.
 
-In Ultralytic's YOLO, in model training code, set device =[0,1] for dual and [0] for single gpu.
+In Ultralytic's YOLO, in model training code, set `device =[0,1]` for dual and `[0]` for single gpu.
 
-<img width="319" height="180" alt="image" src="https://github.com/user-attachments/assets/f09713f7-bbd0-47a5-8f53-16e3cee9d46e" />
-
-<br><br>
-
-<img width="201" height="546" alt="image" src="https://github.com/user-attachments/assets/1649514e-a94c-4be4-b746-e60bafd6a612" />
-
-<br><br>
+<table border="0">
+  <tr>
+    <td align="center">
+      <img src="https://github.com/user-attachments/assets/f09713f7-bbd0-47a5-8f53-16e3cee9d46e" width="400">
+      <br>
+      <sub>Select GPU Accelerator in Settings</sub>
+    </td>
+    <td align="center">
+      <img src="https://github.com/user-attachments/assets/1649514e-a94c-4be4-b746-e60bafd6a612" width="200">
+      <br>
+      <sub>Monitor your VRAM and usage here</sub>
+    </td>
+  </tr>
+</table>
 
 **[Colab](https://colab.research.google.com/)** :-
 Open notebook -> Runtime -> Change runtime type ->T4 GPU.
 <br><br>
 
-<img width="349" height="373" alt="image" src="https://github.com/user-attachments/assets/8922d183-16d2-4689-9d7c-15e0a6a29276" />
-
-<br><br>
-
-<img width="549" height="546" alt="image" src="https://github.com/user-attachments/assets/73f37708-cce6-4ae2-94d8-df5635ed433a" />
-
-<br><br>
-
-<img width="446" height="411" alt="image" src="https://github.com/user-attachments/assets/b5227ed3-eb6a-4646-af59-c7b627445bd9" />
-
-<br><br>
+<table border="0">
+  <tr>
+    <td align="center">
+      <img src="https://github.com/user-attachments/assets/8922d183-16d2-4689-9d7c-15e0a6a29276" width="300">
+      <br>
+      <sub>Click on "Change runtime type"</sub>
+    </td>
+    <td align="center">
+      <img src="https://github.com/user-attachments/assets/73f37708-cce6-4ae2-94d8-df5635ed433a" width="300">
+      <br>
+      <sub>Select T4 GPU from the list</sub>
+    </td>
+    <td align="center">
+      <img src="https://github.com/user-attachments/assets/b5227ed3-eb6a-4646-af59-c7b627445bd9" width="300">
+      <br>
+      <sub>Check resource usage and runtime time remaining by clicking on graph in the corner</sub>
+    </td>
+  </tr>
+</table>
 
 Note: training pauses if the tab is closed or session times out.
 
