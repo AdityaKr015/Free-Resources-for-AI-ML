@@ -127,8 +127,11 @@ In Ultralytic's YOLO, in model training code, set `device =[0,1]` for dual and `
 - Use Upload icon to Upload Dataset/Model in the temporary files of notebook server.
 - **OR** you can save the Dataset/Model on your Google Drive and mount the drive using Drive icon.
 - if prefer running code for mounting
-`from google.colab import drive
-drive.mount('/content/drive')`
+
+```python
+from google.colab import drive
+drive.mount('/content/drive')
+```
 
 **How to setup GPU:-**
 
@@ -159,7 +162,8 @@ Note:- Training pauses if the tab is closed or session times out, and it also le
 Save the data(in zip) locally before closing of notebook.
 
 You can this code in cell to zip the data.
-`zip -r YOURZIPNAME.zip DIRECTLYTOFOLDERSTOZIP`
+
+```zip -r YOURZIPNAME.zip DIRECTLYTOFOLDERSTOZIP```
 
 ## Datasets & Pre-trained Models
 
@@ -189,8 +193,10 @@ Covers nearly every ML task:
 - Multimodal:- image-text, video-text, document understanding
 
 Load any dataset in one line:
-  `from datasets import load_dataset
-  dataset = load_dataset("dataset-name")`
+```python
+from datasets import load_dataset
+dataset = load_dataset("dataset-name")
+```
 
 **Pre-trained Models (1,000,000+)**
 This is where Hugging Face really shines. Instead of training from scratch (which costs time and compute), you can easily load a pre-trained model and fine-tune it on your specific data.
