@@ -24,7 +24,7 @@ There are 2 commonly used free cloud notebook platforms that provide GPUs:-
 - 30 hours/week usage resets on Saturday 
 - Long sessions **(~12 hours)**
 - If want to use kaggle's dataset then no need to download, you can easily load it in notebook using kaggle's server very fast internet.
-- Or You can easily upload your custom dataset/ model and use in notebook.
+- Or you can easily upload your custom dataset/ model and use in notebook.
 - Use "Save and Run All (Commit)". This let notebook run in background session on Kaggle's servers for up to 12 hours and save your weights automatically. You can turn off your laptop, lose internet, or even travel.
 - System Specs:- **4 CPU cores, 29-30 GB RAM, 50-60 GB Disk Storage**
   
@@ -33,7 +33,7 @@ There are 2 commonly used free cloud notebook platforms that provide GPUs:-
 ### 2) Google Colab (Best for quick work)
 - Free T4 GPU **(15 GB VRAM)**
 - Easy to use
-- Google Drive integration
+- Google Drive integration to load dataset/model and even save data directly to drive.
 - Usage hours are not fixed and depend on system load, sessions may disconnect frequently
 - Doesn’t run when tab is closed
 - System Specs:- **2 CPU cores, 12-13 GB RAM, 100+ GB Disk Storage** 
@@ -126,7 +126,7 @@ In Ultralytic's YOLO, in model training code, set `device =[0,1]` for dual and `
 
 - Use Upload icon to Upload Dataset/Model in the temporary files of notebook server.
 - **OR** you can save the Dataset/Model on your Google Drive and mount the drive using Drive icon.
-- if prefer running code for mounting
+- if you prefer running code for mounting
 
 ```python
 from google.colab import drive
@@ -163,7 +163,7 @@ Save the data(in zip) locally before closing of notebook.
 
 You can this code in cell to zip the data.
 
-```zip -r YOURZIPNAME.zip DIRECTLYTOFOLDERSTOZIP```
+```zip -r YOURZIPNAME.zip DIRECTLYOFFOLDERSTOZIP```
 
 ## Datasets & Pre-trained Models
 
@@ -179,16 +179,16 @@ Kaggle is one of the largest free dataset repositories on the internet with mill
 
 **Why it's useful:**
 - Datasets are community uploaded and regularly updated.
-- Most popular datasets come with community notebooks, you can see exactly how others loaded and used the data (Its one of the underrated way to learn, to see how experts/experience people write code).
+- Most popular datasets come with community notebooks, you can see exactly how others loaded and used the data (It's one of the underrated way to learn, to see how experts/experienced people write code).
 - Direct integration with Kaggle notebooks means zero download time when training on the platform.
 
 ### [Hugging Face](https://huggingface.co/)
 Hugging Face is the largest open-source AI platform, think of it as GitHub for ML.
 
-**Datasets (250,000+)**
+**Datasets**
 Covers nearly every ML task:
 - NLP:- Classification, NER, translation, summarization, Q&A
-- Computer Vision:- Classification, detection, segmentation, depth
+- Computer Vision:- Classification, detection, segmentation, depth, GAN, Stable Diffusion
 - Audio:- ASR, speaker identification, audio classification
 - Multimodal:- image-text, video-text, document understanding
 
@@ -198,11 +198,11 @@ from datasets import load_dataset
 dataset = load_dataset("dataset-name")
 ```
 
-**Pre-trained Models (1,000,000+)**
+**Pre-trained Models**
 This is where Hugging Face really shines. Instead of training from scratch (which costs time and compute), you can easily load a pre-trained model and fine-tune it on your specific data.
 
 Some examples:-
-- LLMs        : LLaMA, Mistral, Qwen, Gemma, Phi, Stable Diffusion models
+- LLMs        : LLaMA, Mistral, Qwen, Gemma, Phi
 - Vision      : ViT, CLIP, SAM, DETR, RT-DETR
 - Audio       : Whisper, Wav2Vec 2.0, HuBERT
 - Multimodal  : BLIP, LLaVA, Florence, Idefics
