@@ -23,6 +23,8 @@ There are 2 commonly used free cloud notebook platforms that provide GPUs:-
 - Free GPUs **{T4 x2 (30 GB VRAM) / P100 (16 GB VRAM)}**
 - 30 hours/week usage resets on Saturday 
 - Long sessions **(~12 hours)**
+- If want to use kaggle's dataset then no need to download, you can easily load it in notebook using kaggle's server very fast internet.
+- Or You can easily upload your custom dataset/ model and use in notebook.
 - Use "Save and Run All (Commit)". This let notebook run in background session on Kaggle's servers for up to 12 hours and save your weights automatically. You can turn off your laptop, lose internet, or even travel.
 - System Specs:- **4 CPU cores, 29-30 GB RAM, 50-60 GB Disk Storage**
   
@@ -57,7 +59,33 @@ The Fix: You likely used an Interactive Session. Always use the 'Submit' or 'Sav
 
 ## Quick Setup
 
-**[Kaggle](https://www.kaggle.com/)** :-
+**[Kaggle](https://www.kaggle.com/)** :- 
+
+**How to easily load Dataset/Model:-**
+
+<table border="0">
+  <tr>
+    <td align="center">
+      <img src="https://github.com/user-attachments/assets/be02b54d-9495-47bc-83cf-02522c5c5992" width="400">
+      <br>
+      <sub>From here you can load dataset/models(Add Input).Also can "Upload" Dataset/Model</sub>
+    </td>
+    <td align="center">
+      <img src="https://github.com/user-attachments/assets/e3b1da55-b363-462f-b265-e2db83b75e4f" width="400">
+      <br>
+      <sub>Use "Add Input" for filters</sub>
+    </td>
+    <td align="center">
+      <img src="https://github.com/user-attachments/assets/3074471e-dfd6-44a1-b429-18aae09d7f0f" width="400">
+      <br>
+      <sub>Filters to access your uploaded Dataset/Model.</sub>
+    </td>
+  </tr>
+</table>
+
+
+**How to setup GPU:-**
+
 Create/open a notebook -> Settings -> Accelerator -> select GPU.
 Monitor usage via *Draft Session* panel. 
 
@@ -83,6 +111,27 @@ In Ultralytic's YOLO, in model training code, set `device =[0,1]` for dual and `
 </table>
 
 **[Colab](https://colab.research.google.com/)** :-
+
+**How to load Dataset/Model:-**
+
+<table border="0">
+  <tr>
+    <td align="center">
+      <img src="https://github.com/user-attachments/assets/635bcb59-2ff9-4d3d-8991-d0eef2f60faf" width="400">
+      <br>
+      <sub>Folder icon to access the files of Notebook"</sub>
+    </td>
+  </tr>
+</table>
+
+- Use Upload icon to Upload Dataset/Model in the temporary files of notebook server.
+- **OR** you can save the Dataset/Model on your Google Drive and mount the drive using Drive icon.
+- if prefer running code for mounting
+`from google.colab import drive
+drive.mount('/content/drive')`
+
+**How to setup GPU:-**
+
 Open notebook -> Runtime -> Change runtime type ->T4 GPU.
 <br><br>
 
@@ -106,11 +155,54 @@ Open notebook -> Runtime -> Change runtime type ->T4 GPU.
   </tr>
 </table>
 
-Note: training pauses if the tab is closed or session times out.
+Note:- Training pauses if the tab is closed or session times out, and it also leads to loss of data notebook generated.
+Save the data(in zip) locally before closing of notebook.
+
+You can this code in cell to zip the data.
+`zip -r YOURZIPNAME.zip DIRECTLYTOFOLDERSTOZIP`
 
 ## Datasets & Pre-trained Models
-- Kaggle is one of the best sources for datasets.
-- [Hugging Face](https://huggingface.co/) has datasets and pre-trained models.
+
+### [Kaggle](https://www.kaggle.com/datasets)
+Kaggle is one of the largest free dataset repositories on the internet with 300,000+ public datasets.
+
+**What's available:**
+- Tabular / CSV data:- Great for classical ML (regression, classification)
+- Image datasets:- For CV tasks like image classification, detection, segmentation
+- Audio and video datasets:- For speech/media projects
+- NLP datasets:- Text classification, sentiment, translation
+- Time-series datasets:- For forecasting tasks
+
+**Why it's useful:**
+- Datasets are community uploaded and regularly updated
+- Most popular datasets come with community notebooks, you can see exactly how others loaded and used the data (Its one of the underrrated way to learn, to see how experts/experience people write code)
+- Direct integration with Kaggle notebooks means zero download time when training on the platform
+
+### [Hugging Face](https://huggingface.co/)
+Hugging Face is the largest open-source AI platform, think of it as GitHub + PyPI specifically built for ML.
+
+**Datasets (250,000+)**
+Covers nearly every ML task:
+- NLP:- Classification, NER, translation, summarization, Q&A
+- Computer Vision:- Classification, detection, segmentation, depth
+- Audio:- ASR, speaker identification, audio classification
+- Multimodal:- image-text, video-text, document understanding
+
+Load any dataset in one line:
+  `from datasets import load_dataset
+  dataset = load_dataset("dataset-name")`
+
+**Pre-trained Models (1,000,000+)**
+This is where Hugging Face really shines. Instead of training from scratch (which costs time and compute), you can easily load a pre-trained model and fine-tune it on your specific data.
+
+Some examples:-
+- LLMs        : LLaMA, Mistral, Qwen, Gemma, Phi, Stable Diffusion models
+- Vision      : ViT, CLIP, SAM, DETR, RT-DETR
+- Audio       : Whisper, Wav2Vec 2.0, HuBERT
+- Multimodal  : BLIP, LLaVA, Florence, Idefics
+- Embeddings  : sentence-transformers, BGE, E5
+
+**My suggestion:** Before training anything from scratch, always search Hugging Face first. Chances are a model already exists that's 80-90% of the way to what you need. You just need to fine-tune it on your data.
 
 ## Computer Vision
 
