@@ -164,7 +164,7 @@ You can this code in cell to zip the data.
 ## Datasets & Pre-trained Models
 
 ### [Kaggle](https://www.kaggle.com/datasets)
-Kaggle is one of the largest free dataset repositories on the internet with 300,000+ public datasets.
+Kaggle is one of the largest free dataset repositories on the internet with millions of public datasets.
 
 **What's available:**
 - Tabular / CSV data:- Great for classical ML (regression, classification)
@@ -174,12 +174,12 @@ Kaggle is one of the largest free dataset repositories on the internet with 300,
 - Time-series datasets:- For forecasting tasks
 
 **Why it's useful:**
-- Datasets are community uploaded and regularly updated
-- Most popular datasets come with community notebooks, you can see exactly how others loaded and used the data (Its one of the underrrated way to learn, to see how experts/experience people write code)
-- Direct integration with Kaggle notebooks means zero download time when training on the platform
+- Datasets are community uploaded and regularly updated.
+- Most popular datasets come with community notebooks, you can see exactly how others loaded and used the data (Its one of the underrated way to learn, to see how experts/experience people write code).
+- Direct integration with Kaggle notebooks means zero download time when training on the platform.
 
 ### [Hugging Face](https://huggingface.co/)
-Hugging Face is the largest open-source AI platform, think of it as GitHub + PyPI specifically built for ML.
+Hugging Face is the largest open-source AI platform, think of it as GitHub for ML.
 
 **Datasets (250,000+)**
 Covers nearly every ML task:
@@ -265,7 +265,7 @@ Some examples:-
   
 ## My Workflow
 
-1. Dataset :- Kaggle / Hugging Face  
+1. Dataset :- Kaggle / Roboflow/ Hugging Face  
 2. Data Processing :- Roboflow (for computer vision tasks)  
 3. Training :- Kaggle (T4 x 2)
 4. Testing :- On local cpu/t4 gpu (ONNX Fp16/int8 format)
