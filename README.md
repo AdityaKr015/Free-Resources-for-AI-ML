@@ -264,7 +264,7 @@ Quantization reduces the numerical precision of your model weights, making the m
 | Any GPU  |	ONNX |	FP16 |
 | NVIDIA GPU	| TensorRT |	FP16/INT8 |
 
-*Start with ONNX. Only move to TensorRT or OpenVINO if you need maximum speed.*
+*Start with **ONNX**. Only move to **TensorRT** or **OpenVINO** if you need maximum speed.*
 
 ### Where to Deploy
 - [Hugging Face](https://huggingface.co/spaces)(Best for ML Demos):
