@@ -229,10 +229,42 @@ Some examples:-
 ## Deployment & Optimization
 
 ### Model Optimization (The "Secret" to Smooth Demos)
-- Don't deploy raw training model file (.pt, .keras, .h5) directly. They are heavy and slow. I suggest always optimize your model first.
-- Export to ONNX: Use the ONNX (Open Neural Network Exchange, an universal format) format to reduce latency, with precision FP16 it gets much faster inference on gpu and for cpu INT8 is better with 1-3% less accuracy.
-- Export to OpenVINO: Use the OpenVINO for **only intel cpu** for local machine inference with INT8 precision for much faster inference with cost of 1-3% accuracy.
-- Remove Dependencies: ONNX models run using onnxruntime, which is much lighter (200 MBs) than installing the full PyTorch or TensorFlow library (2-4 GBs) on your server.
+
+Don't deploy your raw training model file (.pt, .keras, .h5) directly. They are heavy and slow. Always optimize your model before deployment.
+
+There are two things I suggest to follow:
+
+**1. Export Format (Changing the architecture)**
+   
+Exporting converts your model from its training format into a format optimized for inference.
+
+- **ONNX (Open Neural Network Exchange):-** A universal format that works across frameworks and hardware. Models run using `onnxruntime`, which is much lighter (~200 MB) than installing full PyTorch or TensorFlow (~2–4 GB) on your server.
+
+- **OpenVINO:-** Intel's inference format. Only for **Intel CPUs**, but gives significantly faster inference on local machines compared to ONNX.
+
+- **TensorRT:-** NVIDIA's inference format. Only for **NVIDIA GPUs**, best for maximum speed on GPU deployment.
+
+**2. Quantization (Reducing the precision)**
+   
+Quantization reduces the numerical precision of your model weights, making the model smaller and faster with a small accuracy tradeoff.
+
+|Precision |	Best For	| Speed	| Accuracy Drop|
+|---------|------------|----------|--------------|
+| **FP32**	| Training (default) |	Slowest |	None |
+| **FP16**	| GPU inference	| Fast | ~0-1% |
+| **INT8**	| CPU inference	| Fastest |	~1–3% |
+
+*Rule of thumb:-* Use **FP16** when deploying on GPU, **INT8** when deploying on CPU.
+
+**Recommended Combinations:-** 
+| Hardware |	Format |	Precision |
+|----------|----------|-------------|
+| Any CPU |	ONNX |	INT8 |
+| Intel CPU |	OpenVINO |	INT8 |
+| Any GPU  |	ONNX |	FP16 |
+| NVIDIA GPU	| TensorRT |	FP16/INT8 |
+
+*Start with ONNX. Only move to TensorRT or OpenVINO if you need maximum speed.*
 
 ### Where to Deploy
 - [Hugging Face](https://huggingface.co/spaces)(Best for ML Demos):
