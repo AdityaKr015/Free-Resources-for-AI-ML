@@ -298,16 +298,19 @@ Quantization reduces the numerical precision of your model weights, making the m
 
 ## Free AI Tools
 
-[LMArena](https://arena.ai/) :- Compare and chat with many AI models for free. Signup using [temporary email.](https://temp-mail.org/)
+[LMArena](https://arena.ai/) :- Compare, test, and chat with dozens of open-source and proprietary LLMs for free side-by-side.
 
+[Gamma AI](https://gamma.app/) :- Generate beautiful presentation slides using simple text prompts. I use it for presenting  ML projects.
+
+*I suggest signup using [temporary email.](https://temp-mail.org/) to keep your main inbox free from promotional spam.*
   
 ## My Workflow
 
 1. Dataset :- Kaggle / Roboflow/ Hugging Face  
 2. Data Processing :- Roboflow (for computer vision tasks)  
 3. Training :- Kaggle (T4 x 2)
-4. Testing :- On local cpu/t4 gpu (ONNX Fp16/int8 format)
-5. Deployment :- Hugging Face Spaces / Render  
+4. Testing :- On local CPU/T4 gpu (ONNX FP16/INT8 format)
+5. Deployment :- Hugging Face Spaces 
 
 This is the pipeline I use for most of my projects.
 
