@@ -7,6 +7,8 @@ This repo contains the exact tools I use to:
 
 No paid stuff,everything free to use.
 
+---
+
 ## Table of Contents
 - [Model Training (Free GPUs)](#model-training)
 - [Datasets & Pre-trained Models](#datasets--pre-trained-models)
@@ -15,7 +17,9 @@ No paid stuff,everything free to use.
 - [YouTube / Learning Resources](#youtube-lecture)
 - [GitHub Repos](#github-repos)
 - [Free AI Tools](#free-ai-tools)
-  
+
+---
+
 ## Model Training
 There are 2 commonly used free cloud notebook platforms that provide GPUs:-
 
@@ -42,24 +46,26 @@ There are 2 commonly used free cloud notebook platforms that provide GPUs:-
 
 ### Common Mistake
 
-Mistake: "I closed my tab and my training stopped!"
+Mistake:- "I closed my tab and my training stopped!"
 
-The Fix: You likely used an Interactive Session. Always use the 'Submit' or 'Save Version' option -> 'Save and Run All' button for actual training.
+The Fix:- You likely used an Interactive Session. Always use the 'Submit' or 'Save Version' option -> 'Save and Run All' button for actual training.
 
 ### My Thoughts
 - In simple terms, the T4 x 2 is 2x~ faster than P100 and let you use larger batch.
-- It's just P100 give 1-3% better metrics because it's a single gpu and does have to communicate with another gpu.. but it's takes double time than T4 x 2.
+- It's just P100 give 1-3% better metrics because it's a single gpu so it doesn't have to communicate with another gpu.. but it's takes double time than T4 x 2.
 - I personally have shifted to Kaggle for its **high GPU power and consistent connection.**
 
 ### Which GPU should you choose?
 
-- **T4 x 2**:-Best for anything, it's 2x~ faster and can process larger batch too. (Don't forget to utilise dual gpu)
-- **P100**:- Strong gpu if model isn't too heavy, most time just ignore.
+- **T4 x 2:-** Best for anything, it's 2x~ faster and can process larger batch too. (Don't forget to utilise dual gpu)
+- **P100:-** Strong gpu if model isn't too heavy, most time just ignore.
 - If you're unsure:-start with **T4 x 2**
+
+---
 
 ## Quick Setup
 
-**[Kaggle](https://www.kaggle.com/)** :- 
+**[Kaggle](https://www.kaggle.com/):-**
 
 **How to easily load Dataset/Model:-**
 
@@ -86,7 +92,7 @@ The Fix: You likely used an Interactive Session. Always use the 'Submit' or 'Sav
 
 **How to setup GPU:-**
 
-Create/open a notebook -> Settings -> Accelerator -> select GPU.
+Create/open a **notebook -> Settings -> Accelerator -> select GPU**.
 Monitor usage via *Draft Session* panel. 
 
 For T4×2, use `torch.nn.DataParallel` (PyTorch)
@@ -124,7 +130,7 @@ In Ultralytic's YOLO, in model training code, set `device =[0,1]` for dual and `
   </tr>
 </table>
 
-- Use Upload icon to Upload Dataset/Model in the temporary files of notebook server.
+- Use **'Upload'** icon to Upload Dataset/Model in the temporary files of notebook server.
 - **OR** you can save the Dataset/Model on your Google Drive and mount the drive using Drive icon.
 - if you prefer running code for mounting
 
@@ -135,7 +141,8 @@ drive.mount('/content/drive')
 
 **How to setup GPU:-**
 
-Open notebook -> Runtime -> Change runtime type ->T4 GPU.
+**Open notebook -> Runtime -> Change runtime type ->T4 GPU.**
+
 <br><br>
 
 <table border="0">
@@ -165,17 +172,19 @@ You can this code in cell to zip the data.
 
 ```zip -r YOURZIPNAME.zip DIRECTLYOFFOLDERSTOZIP```
 
+---
+
 ## Datasets & Pre-trained Models
 
 ### [Kaggle](https://www.kaggle.com/datasets)
 Kaggle is one of the largest free dataset repositories on the internet with millions of public datasets.
 
 **What's available:**
-- Tabular / CSV data:- Great for classical ML (regression, classification)
-- Image datasets:- For CV tasks like image classification, detection, segmentation
-- Audio and video datasets:- For speech/media projects
-- NLP datasets:- Text classification, sentiment, translation
-- Time-series datasets:- For forecasting tasks
+- **Tabular / CSV data:-** Great for classical ML (regression, classification)
+- **Image datasets:-** For CV tasks like image classification, detection, segmentation
+- **Audio and video datasets:-** For speech/media projects
+- **NLP datasets:-** Text classification, sentiment, translation
+- **Time-series datasets:-** For forecasting tasks
 
 **Why it's useful:**
 - Datasets are community uploaded and regularly updated.
@@ -187,12 +196,12 @@ Hugging Face is the largest open-source AI platform, think of it as GitHub for M
 
 **Datasets**
 Covers nearly every ML task:
-- NLP:- Classification, NER, translation, summarization, Q&A
-- Computer Vision:- Classification, detection, segmentation, depth, GAN, Stable Diffusion
-- Audio:- ASR, speaker identification, audio classification
-- Multimodal:- image-text, video-text, document understanding
+- **NLP:-** Classification, NER, translation, summarization, Q&A
+- **Computer Vision:-** Classification, detection, segmentation, depth, GAN, Stable Diffusion
+- **Audio:-** ASR, speaker identification, audio classification
+- **Multimodal:-** image-text, video-text, document understanding
 
-Load any dataset in one line:
+Load any dataset in one line:-
 ```python
 from datasets import load_dataset
 dataset = load_dataset("dataset-name")
@@ -202,13 +211,15 @@ dataset = load_dataset("dataset-name")
 This is where Hugging Face really shines. Instead of training from scratch (which costs time and compute), you can easily load a pre-trained model and fine-tune it on your specific data.
 
 Some examples:-
-- LLMs        : LLaMA, Mistral, Qwen, Gemma, Phi
-- Vision      : ViT, CLIP, SAM, DETR, RT-DETR
-- Audio       : Whisper, Wav2Vec 2.0, HuBERT
-- Multimodal  : BLIP, LLaVA, Florence, Idefics
-- Embeddings  : sentence-transformers, BGE, E5
+- LLMs        :- LLaMA, Mistral, Qwen, Gemma, Phi
+- Vision      :- ViT, CLIP, SAM, DETR, RT-DETR
+- Audio       :- Whisper, Wav2Vec 2.0, HuBERT
+- Multimodal  :- BLIP, LLaVA, Florence, Idefics
+- Embeddings  :- sentence-transformers, BGE, E5
 
 **My suggestion:** Before training anything from scratch, always search Hugging Face first. Chances are a model already exists that's 80-90% of the way to what you need. You just need to fine-tune it on your data.
+
+---
 
 ## Computer Vision
 
@@ -225,6 +236,8 @@ Some examples:-
 **Deployment & Inference**
 - Easy model deployment with a featured workflow builder (similar to n8n)
 - Use pre-trained models for quick inference and testing
+
+---
 
 ## Deployment & Optimization
 
@@ -278,6 +291,8 @@ Quantization reduces the numerical precision of your model weights, making the m
 [Vercel](https://vercel.com/) / [Netlify](https://www.netlify.com/) (Best for Frontends):
 - Use these if you built a custom React/Vue/Next.js frontend to talk to your Hugging Face or Render backend.
 
+---
+
 ## YouTube / Learning Resources
 
 - [Campus X](https://www.youtube.com/@campusx-official) :- In depth Hindi lectures covering Math for ML, classical ML, deep learning, LLMs, and Agentic AI. Includes practical project implementations. Best structured course channel in Hindi.
@@ -291,10 +306,14 @@ Quantization reduces the numerical precision of your model weights, making the m
 
 - [d2l.ai](https://d2l.ai) :- Dive into Deep Learning. Interactive textbook with theory with runnable code. Covers everything from linear models to transformers.
 
+---
+
 ## GitHub Repos
 - [CS Video Courses](https://github.com/Developer-Y/cs-video-courses) :— Detailed list of CS courses with video lectures
 - [500 AI/ML Projects with Code](https://github.com/ashishpatel26/500-AI-Machine-learning-Deep-learning-Computer-vision-NLP-Projects-with-code)
 - [MLOps Zoomcamp](https://github.com/DataTalksClub/mlops-zoomcamp) :— Free MLOps course by DataTalks.Club
+
+---
 
 ## Free AI Tools
 
@@ -303,20 +322,22 @@ Quantization reduces the numerical precision of your model weights, making the m
 [Gamma AI](https://gamma.app/) :- Generate beautiful presentation slides using simple text prompts. I use it for presenting  ML projects.
 
 *I suggest signup using [temporary email.](https://temp-mail.org/) to keep your main inbox free from promotional spam.*
-  
+
+---
+
 ## My Workflow
 
-1. Dataset :- Kaggle / Roboflow/ Hugging Face  
-2. Data Processing :- Roboflow (for computer vision tasks)  
-3. Training :- Kaggle (T4 x 2)
-4. Testing :- On local CPU/T4 gpu (ONNX FP16/INT8 format)
-5. Deployment :- Hugging Face Spaces 
+1. **Dataset :-** Kaggle / Roboflow/ Hugging Face  
+2. **Data Processing :-** Roboflow (for computer vision tasks)  
+3. **Training :-** Kaggle (T4 x 2)
+4. **Testing :-** On local CPU/T4 gpu (ONNX FP16/INT8 format)
+5. **Deployment :-** Hugging Face Spaces 
 
 This is the pipeline I use for most of my projects.
 
 ## Why this repo?
 
-I created this to help people who:
+I created this to help people who:-
 - Don’t have high-end laptops
 - Can’t afford paid GPUs
 - Still want to build real AI/ML projects
