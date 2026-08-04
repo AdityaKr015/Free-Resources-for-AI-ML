@@ -21,44 +21,61 @@ No paid stuff,everything free to use.
 ---
 
 ## Model Training
-There are 2 commonly used free cloud notebook platforms that provide GPUs:-
+Most people know Google Colab and Kaggle, but there's hidden gem: **Marimo Molab**:-
 
-### 1) Kaggle (Best for Training)
-- Free GPUs **{T4 x2 (30 GB VRAM) / P100 (16 GB VRAM)}**
+| Platform | GPU (VRAM) | RAM | CPUs | Session | Background Training | Runtime Disk |Persistent Storage |
+|----------|------------|-----|------|---------|----------------|----------|------------------------|
+| Marimo Molab | RTX Pro 6000 Blackwell (96 GB) | 32 GB | 4 | Up to 12 hr | **No** | Not officially stated | Yes but quota not public |
+| Kaggle | 2× T4 (30 GB) / P100 (16 GB) | 30 GB | 4 | Up to 12 hr | **Yes** (Save & Run / Commit ) | 50–60 GB | Your own Kaggle Datasets |
+| Google Colab | T4 (15 GB) | 12 GB | 2 | Variable | **No** | ~100 GB  | Google Drive |
+
+> Extra Info
+
+### 1) Marimo Molab (Powerful GPU)
+
+Marimo is an open-source **reactive Python notebook**, while Molab is its **free cloud notebook platform** with GPU.
+
+- Built-in connectors for Google Drive, Amazon S3, Google Cloud Storage, Azure Blob Storage, and CoreWeave Object Storage.
+- Marimo is a reactive Python notebook:- Run a cell or interact with a UI element, and marimo automatically runs dependent cells (or marks them as stale) keeping code and outputs consistent.
+- Marimo notebooks are stored as pure Python (with SQL support), executable as scripts, and deployable as apps.
+
+**Best for:- Heavy LLM Finetuning, computer vision, long run with high VRAM(96)**
+
+### 2) Kaggle (A Balanced Platform)
 - 30 hours/week usage resets on Saturday 
-- Long sessions **(~12 hours)**
-- If want to use kaggle's dataset then no need to download, you can easily load it in notebook using kaggle's server very fast internet.
+- Kaggle Datasets can be attached directly to notebooks without downloading, making dataset loading extremely fast.
 - Or you can easily upload your custom dataset/ model and use in notebook.
-- Use "Save and Run All (Commit)". This let notebook run in background session on Kaggle's servers for up to 12 hours and save your weights automatically. You can turn off your laptop, lose internet, or even travel.
-- System Specs:- **4 CPU cores, 29-30 GB RAM, 50-60 GB Disk Storage**
+- Supports background execution through **Save Version → Save & Run All (Commit)**.
+- Excellent community, competitions, notebooks and discussions.
   
-**Best for:- Heavy training, long runs**
+**Best for:-  training, long runs**
 
-### 2) Google Colab (Best for quick work)
-- Free T4 GPU **(15 GB VRAM)**
-- Easy to use
-- Google Drive integration to load dataset/model and even save data directly to drive.
+### 3) Google Colab (Best for quick work)
 - Usage hours are not fixed and depend on system load, sessions may disconnect frequently
 - Doesn’t run when tab is closed
-- System Specs:- **2 CPU cores, 12-13 GB RAM, 100+ GB Disk Storage** 
-
+- Native Google Drive integration.
+- Great for prototyping and inference.
+- Runtime availability varies depending on demand.
+  
 **Best for:- Testing, small experiments**
 
-### Common Mistake
+### Kaggle Tip
 
 Mistake:- "I closed my tab and my training stopped!"
 
 The Fix:- You likely used an Interactive Session. Always use the 'Submit' or 'Save Version' option -> 'Save and Run All' button for actual training.
 
 ### My Thoughts
-- In simple terms, the T4 x 2 is 2x~ faster than P100 and let you use larger batch.
-- It's just P100 give 1-3% better metrics because it's a single gpu so it doesn't have to communicate with another gpu.. but it's takes double time than T4 x 2.
-- I personally have shifted to Kaggle for its **high GPU power and consistent connection.**
+
+- If Molab is available, I'd choose it first because of the massive 96 GB VRAM.
+- For most training jobs, I still prefer Kaggle because of its stable sessions, background execution and excellent ecosystem.
+- I mainly use Colab for quick experiments and inference.
 
 ### Which GPU should you choose?
 
-- **T4 x 2:-** Best for anything, it's 2x~ faster and can process larger batch too. (Don't forget to utilise dual gpu)
-- **P100:-** Strong gpu if model isn't too heavy, most time just ignore.
+- **RTX Pro 6000 (Blackwell):** Currently the most powerful free cloud GPU. Ideal for LLM fine-tuning, large vision models, diffusion models, and workloads requiring very high VRAM (96 GB).
+- **2× T4:** Excellent for most computer vision and deep learning projects. Just make sure the code can actually utilize both GPUs. (DataParallell)[PyTorch]/(MirroredStrategy)[Tensorflow]
+- **P100:-** Capable GPU if your model fits within 16 GB VRAM, though the dual T4 option is generally the better choice.
 - If you're unsure:-start with **T4 x 2**
 
 ---
