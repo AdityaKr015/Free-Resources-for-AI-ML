@@ -21,7 +21,7 @@ No paid stuff,everything free to use.
 ---
 
 ## Model Training
-Most people know Google Colab and Kaggle, but there's hidden gem: **Marimo Molab**:-
+Most people know Google Colab and Kaggle, but there's hidden gem **Marimo Molab**:-
 
 | Platform | GPU (VRAM) | CPU/RAM | Session | Background Training | Runtime Disk |Persistent Storage |
 |----------|------------|-----------|---------|----------------|----------|------------------------|
@@ -33,29 +33,27 @@ Most people know Google Colab and Kaggle, but there's hidden gem: **Marimo Molab
 
 ### 1) Marimo Molab (Powerful GPU)
 
-Marimo is an open-source **reactive Python notebook**, while Molab is its **free cloud notebook platform** with GPU.
+Marimo is an open-source **reactive Python notebook** and Molab is its **free cloud notebook platform** with GPU.
 
 - Built-in connectors for Google Drive, Amazon S3, Google Cloud Storage, Azure Blob Storage, and CoreWeave Object Storage.
 - Marimo is a reactive Python notebook:- Run a cell or interact with a UI element, and marimo automatically runs dependent cells (or marks them as stale) keeping code and outputs consistent.
 - Marimo notebooks are stored as pure Python (with SQL support), executable as scripts, and deployable as apps.
 
-**Best for:- Heavy LLM Finetuning, computer vision, long run with high VRAM(96)**
+**Best for:- Heavy LLM Finetuning, computer vision, long run with high VRAM**
 
 ### 2) Kaggle (A Balanced Platform)
 - 30 hours/week usage resets on Saturday 
 - Kaggle Datasets can be attached directly to notebooks without downloading, making dataset loading extremely fast.
 - Or you can easily upload your custom dataset/ model and use in notebook.
-- Supports background execution through **Save Version → Save & Run All (Commit)**.
+- Supports background execution through **Save Version -> Save & Run All (Commit)**.
 - Excellent community, competitions, notebooks and discussions.
   
-**Best for:-  training, long runs**
+**Best for:- Medium parameters modeltraining, long runs**
 
 ### 3) Google Colab (Best for quick work)
 - Usage hours are not fixed and depend on system load, sessions may disconnect frequently
 - Doesn’t run when tab is closed
 - Native Google Drive integration.
-- Great for prototyping and inference.
-- Runtime availability varies depending on demand.
   
 **Best for:- Testing, small experiments**
 
@@ -74,9 +72,9 @@ The Fix:- You likely used an Interactive Session. Always use the 'Submit' or 'Sa
 ### Which GPU should you choose?
 
 - **RTX Pro 6000 (Blackwell):** Currently the most powerful free cloud GPU. Ideal for LLM fine-tuning, large vision models, diffusion models, and workloads requiring very high VRAM (96 GB).
-- **2× T4:** Excellent for most computer vision and deep learning projects. Just make sure the code can actually utilize both GPUs. (DataParallell)[PyTorch]/(MirroredStrategy)[Tensorflow]
+- **2× T4:** Strong for most computer vision and deep learning projects. Just make sure the code can actually utilize both GPUs. (DataParallell)[PyTorch]/(MirroredStrategy)[Tensorflow]
 - **P100:-** Capable GPU if your model fits within 16 GB VRAM, though the dual T4 option is generally the better choice.
-- If you're unsure:-start with **T4 x 2**
+- If you're unsure:- Start with **RTX Pro 6000**
 
 ---
 
@@ -84,7 +82,7 @@ The Fix:- You likely used an Interactive Session. Always use the 'Submit' or 'Sa
 
 **[Marimo Molab](https://molab.marimo.io/):-**
 
-**How to add remote storages:-**
+**How to add Remote storages:-**
 
 <table border="0">
   <tr>
@@ -379,7 +377,7 @@ Quantization reduces the numerical precision of your model weights, making the m
 
 [Gamma AI](https://gamma.app/) :- Generate beautiful presentation slides using simple text prompts. I use it for presenting  ML projects.
 
-*I suggest signup using [temporary email.](https://temp-mail.org/) to keep your main inbox free from promotional spam.*
+*I suggest using [temp email.](https://temp-mail.org/) to keep your main inbox free from promotional spam.*
 
 ---
 
@@ -387,7 +385,7 @@ Quantization reduces the numerical precision of your model weights, making the m
 
 1. **Dataset :-** Kaggle / Roboflow/ Hugging Face  
 2. **Data Processing :-** Roboflow (for computer vision tasks)  
-3. **Training :-** Kaggle (T4 x 2)
+3. **Training :-** Marimo Molab/Kaggle
 4. **Testing :-** On local CPU/T4 gpu (ONNX FP16/INT8 format)
 5. **Deployment :-** Hugging Face Spaces 
 
