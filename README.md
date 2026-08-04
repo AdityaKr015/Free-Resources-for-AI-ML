@@ -25,7 +25,7 @@ Most people know Google Colab and Kaggle, but there's hidden gem: **Marimo Molab
 
 | Platform | GPU (VRAM) | CPU/RAM | Session | Background Training | Runtime Disk |Persistent Storage |
 |----------|------------|-----------|---------|----------------|----------|------------------------|
-| Marimo Molab | RTX Pro 6000 Blackwell (96 GB) | 4/32 GB | 4 | Up to 12 hr | **No** | Not officially stated | Yes but quota not public |
+| Marimo Molab | RTX Pro 6000 Blackwell (96 GB) | 4/32 GB | Up to 12 hr | **No** | Not officially stated | Yes but quota not public |
 | Kaggle | 2× T4 (30 GB) / P100 (16 GB) | 4/30 GB | Up to 12 hr | **Yes** (Save & Run / Commit ) | 50–60 GB | Your own Kaggle Datasets |
 | Google Colab | T4 (15 GB) | 2/12 GB | Variable | **No** | ~100 GB  | Google Drive |
 
