@@ -84,7 +84,7 @@ The Fix:- You likely used an Interactive Session. Always use the 'Submit' or 'Sa
 
 **[Marimo Molab](https://molab.marimo.io/):-**
 
-**How to add remote storages**
+**How to add remote storages:-**
 
 <table border="0">
   <tr>
@@ -101,7 +101,7 @@ The Fix:- You likely used an Interactive Session. Always use the 'Submit' or 'Sa
   </tr>
 </table>
 
-**How to Setup GPU**
+**How to Setup GPU:-**
 
 <table border="0">
   <tr>
@@ -113,6 +113,11 @@ The Fix:- You likely used an Interactive Session. Always use the 'Submit' or 'Sa
     <td align="center">
       <b>Select GPU and Save</b><br><br>
       <img src="https://github.com/user-attachments/assets/197a8595-8b9e-4583-bfd0-052eed7df67f">
+      <br>
+    </td>
+    <td align="center">
+      <b>Utilisation</b><br><br>
+      <img src="https://github.com/user-attachments/assets/bf3a74ed-b9c5-4d4e-939a-9ea3d4abd26b">
       <br>
     </td>
   </tr>
