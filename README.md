@@ -82,6 +82,42 @@ The Fix:- You likely used an Interactive Session. Always use the 'Submit' or 'Sa
 
 ## Quick Setup
 
+**[Marimo Molab](https://molab.marimo.io/):-**
+
+**How to add remote storages**
+
+<table border="0">
+  <tr>
+    <td align="center">
+      <b>Side Panel->Views Files->Remote Storagr</b><br><br>
+      <img src="https://github.com/user-attachments/assets/5009851b-0e0b-4649-b8d3-d23d3dbfa550">
+      <br>
+    </td>
+    <td align="center">
+      <b>Add Remote Storage</b><br><br>
+      <img src="https://github.com/user-attachments/assets/ce51d328-baff-4725-b23d-176a2527acd6">
+      <br>
+    </td>
+  </tr>
+</table>
+
+**How to Setup GPU**
+
+<table border="0">
+  <tr>
+    <td align="center">
+      <b>Top Middle Panel</b><br><br>
+      <img src="https://github.com/user-attachments/assets/764c7e46-b8e4-4a50-a4a7-cd478f4dd6c5">
+      <br>
+    </td>
+    <td align="center">
+      <b>Select GPU and Save</b><br><br>
+      <img src="https://github.com/user-attachments/assets/197a8595-8b9e-4583-bfd0-052eed7df67f">
+      <br>
+    </td>
+  </tr>
+</table>
+
 **[Kaggle](https://www.kaggle.com/):-**
 
 **How to easily load Dataset/Model:-**
