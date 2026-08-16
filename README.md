@@ -21,7 +21,7 @@ No paid stuff,everything free to use.
 ---
 
 ## Model Training
-Most people know Google Colab and Kaggle, but there's hidden gem **Marimo Molab**:-
+Most people know Google Colab and Kaggle, but there's hidden gem:- **Marimo Molab**:-
 
 | Platform | GPU (VRAM) | CPU/RAM | Session | Background Training | Runtime Disk |Persistent Storage |
 |----------|------------|-----------|---------|----------------|----------|------------------------|
@@ -33,48 +33,48 @@ Most people know Google Colab and Kaggle, but there's hidden gem **Marimo Molab*
 
 ### 1) Marimo Molab (Powerful GPU)
 
-Marimo is an open-source **reactive Python notebook** and Molab is its **free cloud notebook platform** with GPU.
+Marimo is an open-source **reactive Python notebook**, and Molab is its **free cloud notebook platform** with GPU access.
 
 - Built-in connectors for Google Drive, Amazon S3, Google Cloud Storage, Azure Blob Storage, and CoreWeave Object Storage.
-- Marimo is a reactive Python notebook:- Run a cell or interact with a UI element, and marimo automatically runs dependent cells (or marks them as stale) keeping code and outputs consistent.
-- Marimo notebooks are stored as pure Python (with SQL support), executable as scripts, and deployable as apps.
+- Marimo is reactive: run a cell or interact with a UI element, and it automatically re-runs dependent cells (or marks them stale), keeping code and outputs consistent.
+- Notebooks are stored as pure Python (with SQL support), executable as scripts, and deployable as apps.
 
-**Best for:- Heavy LLM Finetuning, computer vision, long run with high VRAM**
+**Best for:-** Heavy LLM fine-tuning, computer vision, long runs with high VRAM needs.
 
 ### 2) Kaggle (A Balanced Platform)
-- 30 hours/week usage resets on Saturday 
+- 30 hours/week usage, resets every Saturday.
 - Kaggle Datasets can be attached directly to notebooks without downloading, making dataset loading extremely fast.
-- Or you can easily upload your custom dataset/ model and use in notebook.
-- Supports background execution through **Save Version -> Save & Run All (Commit)**.
-- Excellent community, competitions, notebooks and discussions.
-  
-**Best for:- Medium parameters modeltraining, long runs**
+- Easily upload your own custom dataset/model and use it in a notebook.
+- Supports background execution through **Save Version → Save & Run All (Commit)**.
+- Excellent community, competitions, notebooks, and discussions.
+
+**Best for:** Medium-parameter model training, long runs.
 
 ### 3) Google Colab (Best for quick work)
-- Usage hours are not fixed and depend on system load, sessions may disconnect frequently
-- Doesn’t run when tab is closed
+- Usage hours aren't fixed and depend on system load; sessions may disconnect frequently.
+- Doesn't run in the background, training stops when the tab is closed.
 - Native Google Drive integration.
-  
-**Best for:- Testing, small experiments**
+
+**Best for:** Testing, small experiments.
 
 ### Kaggle Tip
 
-Mistake:- "I closed my tab and my training stopped!"
+**Mistake:** "I closed my tab and my training stopped!"
 
-The Fix:- You likely used an Interactive Session. Always use the 'Submit' or 'Save Version' option -> 'Save and Run All' button for actual training.
+**The Fix:** You likely used an Interactive Session. Always use 'Save Version' → 'Save and Run All' for actual training.
 
 ### My Thoughts
 
 - If Molab is available, I'd choose it first because of the massive 96 GB VRAM.
-- For most training jobs, I still prefer Kaggle because of its stable sessions, background execution and excellent ecosystem.
+- For most training jobs, I still prefer Kaggle for its stable sessions, background execution, and ecosystem.
 - I mainly use Colab for quick experiments and inference.
 
 ### Which GPU should you choose?
 
-- **RTX Pro 6000 (Blackwell):** Currently the most powerful free cloud GPU. Ideal for LLM fine-tuning, large vision models, diffusion models, and workloads requiring very high VRAM (96 GB).
-- **2× T4:** Strong for most computer vision and deep learning projects. Just make sure the code can actually utilize both GPUs. (DataParallell)[PyTorch]/(MirroredStrategy)[Tensorflow]
-- **P100:-** Capable GPU if your model fits within 16 GB VRAM, though the dual T4 option is generally the better choice.
-- If you're unsure:- Start with **RTX Pro 6000**
+- **RTX Pro 6000 (Blackwell):** Currently the most powerful free cloud GPU. Ideal for LLM fine-tuning, large vision models, diffusion models, and workloads needing very high VRAM (96 GB).
+- **2× T4:** Strong for most computer vision and deep learning projects. Make sure your code can actually utilize both GPUs (`DataParallel` in PyTorch / `MirroredStrategy` in TensorFlow).
+- **P100:** Capable if your model fits within 16 GB VRAM, though dual T4 is generally the better choice.
+- If unsure: start with **RTX Pro 6000**.
 
 ---
 
@@ -351,17 +351,18 @@ Quantization reduces the numerical precision of your model weights, making the m
 
 ## YouTube / Learning Resources
 
-- [Campus X](https://www.youtube.com/@campusx-official) :- In depth Hindi lectures covering Math for ML, classical ML, deep learning, LLMs, and Agentic AI. Includes practical project implementations. Best structured course channel in Hindi.
+- [Campus X](https://www.youtube.com/@campusx-official) :- Run by Nitish Singh. Historically known as a Hindi-medium channel, but recent content (RAG, LangGraph, n8n, agentic AI) has shifted mostly to English. Covers Math for ML, classical ML, deep learning, LLMs, and Agentic AI. Best structured course channel for data science.
 
-- [Krish Naik](https://www.youtube.com/@krishnaik06) :- Similar to Campus X but in Hinglish. Good for end-to-end project walkthroughs and staying updated on new tools/frameworks.
+- [Krish Naik](https://www.youtube.com/@krishnaik06) :- Main channel is primarily English/Hinglish, covering end-to-end ML project walkthroughs and new tools/frameworks. He also runs a separate dedicated channel, [Krish Naik Hindi](https://www.youtube.com/@krishnaikhindi), for the same content fully in Hindi.
 
-- [Andrej Karpathy](https://www.youtube.com/@AndrejKarpathy) :- Ex-OpenAI/Tesla. Builds neural networks from scratch (GPT, tokenizers, backprop). Best channel if you want deep intuition over how things actually work.
+- [Andrej Karpathy](https://www.youtube.com/@AndrejKarpathy) :- Ex-OpenAI co-founder, former Tesla AI lead, and now part of Anthropic's pre-training team. Builds neural networks from scratch (GPT, tokenizers, backprop). Best channel if you want deep intuition over how things actually work.
 
- - [3Blue1Brown](https://www.youtube.com/@3blue1brown) :- Visual explanations of Maths and 
-  Neural Networks. Highly recommended for building intuition before diving into code.
+- [NeuralNine](https://www.youtube.com/@NeuralNine) :- Run by Florian Dedov, freelance programmer and ML engineer who also authors Python/Algorithm books. Covers Python, cybersecurity, ML/DL, and general CS through practical, code-heavy tutorials with a strong "build it live" style. Very simple explanation for hands-on project-based learning.
+
+- [3Blue1Brown](https://www.youtube.com/@3blue1brown) :- Run by Grant Sanderson. Visual explanations of Maths behind Machine Learning algorithms, neural networks etc. Highly recommended for building intuition before diving into code.
 
 - [d2l.ai](https://d2l.ai) :- Dive into Deep Learning. Interactive textbook with theory with runnable code. Covers everything from linear models to transformers.
-
+  
 ---
 
 ## GitHub Repos
